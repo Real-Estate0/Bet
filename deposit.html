@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deposit - MoroccoBet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0c0c0c;
+      color: #fff;
+    }
+    header.navbar {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #222;
+    }
+    header.navbar h1 {
+      margin: 0;
+      color: #ffcc00;
+    }
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #ddd;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .deposit-section {
+      max-width: 500px;
+      margin: 60px auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(255, 204, 0, 0.2);
+      text-align: center;
+    }
+    .deposit-section h2 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+    .btc-address {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 16px;
+      user-select: all;
+      margin-bottom: 20px;
+      word-break: break-all;
+    }
+    .instructions {
+      color: #ccc;
+      margin-bottom: 25px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .btn {
+      padding: 12px 25px;
+      background: #ffcc00;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #e6b800;
+    }
+    .note {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #999;
+      line-height: 1.4;
+    }
+    .min-deposit {
+      color: #ffcc00;
+      font-weight: bold;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1>🇲🇦 MoroccoBet</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="deposit-section">
+    <h2>Deposit Bitcoin (BTC)</h2>
+    <p class="instructions">
+      Please send your Bitcoin payment to the address below using Trust Wallet or any BTC wallet.<br/>
+      After sending, click "Confirm Payment" to proceed. Your deposit will be confirmed after the blockchain verifies the transaction.
+    </p>
+
+    <div class="min-deposit">Minimum deposit is $500</div>
+
+    <div class="btc-address" id="btcAddress">bc1qxyz12345abcdef6789...yourBTCaddress...</div>
+
+    <a href="loading.html" class="btn">Confirm Payment</a>
+
+    <p class="note">
+      * Make sure to send the exact amount you want to deposit.<br/>
+      * Betting is at your own risk. MoroccoBet does not take responsibility for lost funds.<br/>
+      * Deposits typically confirm within 10-30 minutes.
+    </p>
+  </section>
+</body>
+</html>

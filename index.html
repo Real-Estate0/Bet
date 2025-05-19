@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoroccoBet - Bet Smart, Win Big</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: #222;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar h1 {
+      font-size: 1.5rem;
+      color: #00b894;
+    }
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero-section {
+      background: url('https://images.unsplash.com/photo-1600508773483-365f9baea1e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      padding: 100px 20px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background-color: #00b894;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #01926f;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #2d3436;
+    }
+
+    .steps, .reasons, .testimonial-boxes, .stats-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .step, .reason, .testimonial, .stats-box > div {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .match-card {
+      background: #fff;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn-small {
+      padding: 6px 12px;
+      background: #0984e3;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .btn-small:hover {
+      background: #0652dd;
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .stats-box {
+      text-align: center;
+    }
+
+    .stats-box div {
+      font-size: 1.2rem;
+      color: #2d3436;
+    }
+
+    .stats-box strong {
+      display: block;
+      font-size: 1.8rem;
+      color: #00b894;
+    }
+
+    footer {
+      text-align: center;
+      background: #222;
+      color: #bbb;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #00b894;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1>🇲🇦 MoroccoBet</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2>Bet Smart. Win Big. The #1 Moroccan Betting Platform</h2>
+      <p>Join thousands of Moroccans placing correct score bets and cashing out daily.</p>
+      <a href="register.html" class="btn">Create Free Account</a>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1️⃣ Register</h3>
+        <p>Create your free account in under 1 minute.</p>
+      </div>
+      <div class="step">
+        <h3>2️⃣ Fund Wallet</h3>
+        <p>Deposit via mobile money or card to activate betting.</p>
+      </div>
+      <div class="step">
+        <h3>3️⃣ Place Bets</h3>
+        <p>Choose correct score predictions and stake your amount.</p>
+      </div>
+      <div class="step">
+        <h3>4️⃣ Win & Withdraw</h3>
+        <p>If correct, you win x10 your bet! Withdraw instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Matches -->
+  <section class="matches">
+    <h2>🔥 Today's Featured Matches</h2>
+    <div class="match-card">
+      <div>
+        <strong>Zamora Kings vs Estrellico FC</strong>
+        <p>Kickoff: 9:00 PM</p>
+      </div>
+      <a href="match.html?match=barcelona-vs-madrid" class="btn-small">View Bet</a>
+    </div>
+    <div class="match-card">
+      <div>
+        <strong>FC Veldra vs Northbridge Rovers</strong>
+        <p>Kickoff: 7:30 PM</p>
+      </div>
+      <a href="match.html?match=wydad-vs-raja" class="btn-small">View Bet</a>
+    </div>
+    <div class="match-card">
+      <div>
+        <strong>Al Hilron FC vs Tarnovia United</strong>
+        <p>Kickoff: 10:00 PM</p>
+      </div>
+      <a href="match.html?match=city-vs-psg" class="btn-small">View Bet</a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-us">
+    <h2>Why MoroccoBet?</h2>
+    <div class="reasons">
+      <div class="reason">
+        <h3>🇲🇦 100% Moroccan</h3>
+        <p>Built for Moroccans by Moroccans. Fast local support & MAD payments.</p>
+      </div>
+      <div class="reason">
+        <h3>💸 Fast Payouts</h3>
+        <p>Withdraw winnings instantly to your local wallet or bank.</p>
+      </div>
+      <div class="reason">
+        <h3>🎯 Accurate Predictions</h3>
+        <p>We highlight trending scorelines so you increase your win rate.</p>
+      </div>
+      <div class="reason">
+        <h3>🛡️ Secure Platform</h3>
+        <p>End-to-end encrypted. Your funds and data are safe with us.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Winners Say</h2>
+    <div class="testimonial-boxes">
+      <div class="testimonial">
+        <p>"I bet on 2-1 and won 800 MAD in one night. This site is legit!"</p>
+        <strong>- Youssef A.</strong>
+      </div>
+      <div class="testimonial">
+        <p>"As a football fan, I love the simplicity and fast payouts."</p>
+        <strong>- Fatima B.</strong>
+      </div>
+      <div class="testimonial">
+        <p>"The best platform in Morocco for sports betting!"</p>
+        <strong>- Karim M.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Stats -->
+  <section class="stats">
+    <h2>📊 Live Platform Stats</h2>
+    <div class="stats-box">
+      <div><strong id="totalUsers">+12,450</strong><p>Active Users</p></div>
+      <div><strong id="totalMatches">+6,820</strong><p>Matches Posted</p></div>
+      <div><strong id="totalWinnings">+1,200,000 MAD</strong><p>Paid Out</p></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MoroccoBet. All rights reserved.</p>
+    <p>Need help? <a href="#">Contact Support</a></p>
+  </footer>
+</body>
+</html>

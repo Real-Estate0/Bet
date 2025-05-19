@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Processing Payment - MoroccoBet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0c0c0c;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .loader {
+      border: 8px solid #2a2a2a;
+      border-top: 8px solid #ffcc00;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 1.5s linear infinite;
+      margin-bottom: 30px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    h2 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #ccc;
+      font-size: 16px;
+      max-width: 400px;
+      line-height: 1.4;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 12px 25px;
+      background: #ffcc00;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #e6b800;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
+  <h2>Processing Your Payment</h2>
+  <p>If you have successfully made your payment, you will receive a confirmation email shortly. Please check your inbox and spam folder.</p>
+  <a href="match.html" class="btn">Go to Matches</a>
+</body>
+</html>

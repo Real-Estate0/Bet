@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoroccoBet - Fixed Match</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }
+
+    header {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #222;
+    }
+
+    header h1 {
+      color: #ffcc00;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #1b1b1b;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(255, 204, 0, 0.15);
+      text-align: center;
+    }
+
+    .match-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .match-time, .countdown {
+      margin-bottom: 15px;
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    .countdown {
+      font-size: 1.2rem;
+      color: #ffcc00;
+    }
+
+    .message {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      color: #eee;
+    }
+
+    .unlock-btn {
+      background: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .unlock-btn:hover {
+      background: #e6b800;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🇲🇦 MoroccoBet</h1>
+  </header>
+
+  <div class="container">
+    <div class="match-title">FC Veldra vs Northbridge Rovers</div>
+    <div class="match-time">Kickoff: 9:00 PM Today</div>
+    <div class="countdown" id="countdown">Loading countdown...</div>
+    <div class="message">
+      This match is part of our fixed prediction for today.<br><br>
+      <strong>Subscribe to Premium to view the exact correct score prediction.</strong>
+    </div>
+    <a class="unlock-btn" href="https://wa.me/15642121592?text=Hello%20Admin%2C%20I%20want%20to%20subscribe%20to%20MoroccoBet%20premium." target="_blank">
+      Unlock Premium via WhatsApp
+    </a>
+  </div>
+
+  <script>
+    // Set kickoff time (9:00 PM today)
+    const now = new Date();
+    const kickoff = new Date();
+    kickoff.setHours(21, 0, 0, 0); // 21:00 (9 PM)
+
+    // If it's already past 9PM, assume match is tomorrow
+    if (now > kickoff) {
+      kickoff.setDate(kickoff.getDate() + 1);
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = kickoff - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerText = "Match has started!";
+        return;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerText =
+        `Starts in: ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>

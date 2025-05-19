@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Place Bet - MoroccoBet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: #fff;
+    }
+    header.navbar {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #222;
+    }
+    header.navbar h1 {
+      color: #ffcc00;
+      margin: 0;
+    }
+    nav a {
+      color: #ddd;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .match-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #1b1b1b;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(255, 204, 0, 0.2);
+    }
+    .match-container h2 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .match-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .match-info p {
+      margin: 5px 0;
+      color: #ccc;
+    }
+    .score-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .score-option {
+      background: #2a2a2a;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      user-select: none;
+    }
+    .score-option:hover {
+      background: #ffcc00;
+      color: #000;
+    }
+    .score-option.selected {
+      background: #ffcc00;
+      color: #000;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #2a2a2a;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #ffcc00;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #e6b800;
+    }
+    .error {
+      color: #ff4444;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1>🇲🇦 MoroccoBet</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="match-container">
+    <h2>Barcelona vs Real Madrid</h2>
+    <div class="match-info">
+      <p>Kickoff Time: 9:00 PM</p>
+      <p>Odds: x10 on Correct Score</p>
+    </div>
+
+    <form id="betForm" action="deposit.html" method="GET" onsubmit="return validateAndSubmit()">
+      <div class="score-options" id="scoreOptions">
+        <div class="score-option">1-0</div>
+        <div class="score-option">2-1</div>
+        <div class="score-option">2-2</div>
+        <div class="score-option">3-1</div>
+        <div class="score-option">3-2</div>
+        <div class="score-option">1-1</div>
+      </div>
+
+      <input type="number" id="betAmount" name="amount" placeholder="Enter bet amount (MAD)" min="1" required />
+
+      <input type="hidden" id="selectedScore" name="score" value=""/>
+
+      <div class="error" id="errorMsg"></div>
+
+      <button type="submit" class="btn">Place Bet</button>
+    </form>
+  </section>
+
+  <script>
+    const options = document.querySelectorAll('.score-option');
+    let selectedScore = null;
+    const errorMsg = document.getElementById('errorMsg');
+
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        options.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
+        selectedScore = option.textContent;
+        document.getElementById('selectedScore').value = selectedScore;
+        errorMsg.textContent = '';
+      });
+    });
+
+    function validateAndSubmit() {
+      const amount = document.getElementById('betAmount').value.trim();
+
+      if (!selectedScore) {
+        errorMsg.textContent = 'Please select a score prediction.';
+        return false;
+      }
+
+      if (!amount || isNaN(amount) || Number(amount) <= 0) {
+        errorMsg.textContent = 'Please enter a valid bet amount.';
+        return false;
+      }
+
+      // Form will submit via GET to deposit.html?score=...&amount=...
+      return true;
+    }
+  </script>
+</body>
+</html>
